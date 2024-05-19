@@ -1,0 +1,87 @@
+$backGroundColor: #0a192f;
+
+$sectionsColor: #a9aad1;
+
+$underlineColor: #00caad;
+
+$buttonColor: #00caad;
+
+$fontWeight: bold;
+
+//gerneral
+body {
+  background-color: $backGroundColor;
+}
+a {
+  text-decoration: none;
+}
+//end
+
+//Navigation sections for the page
+#nav-bar-sections {
+  align-content: center;
+
+  #sectionContainer {
+    width: 80%;
+    max-width: 400px;
+    display: inline-flex;
+    justify-content: space-evenly;
+
+    .sections {
+      font-weight: $fontWeight;
+      color: $sectionsColor;
+      display: inline-flex;
+      padding-left: 5%;
+      position: relative;
+      opacity: 0.5;
+      transition: opacity 300ms;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        background-color: $underlineColor;
+        left: 1.5px;
+        bottom: -5px;
+        opacity: 0;
+        transition: all 0.2s;
+        pointer-events: none;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+      
+      &:hover::after {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+}
+//end
+
+//nav bar icon
+.nav-bar-icon {
+  width: 100%;
+  max-width: 150px;
+  height: 150px;
+  pointer-events: none;
+}
+//end
+
+//Resume button
+
+#CVButton {
+  color: $sectionsColor;
+  border-color: $buttonColor;
+  display: inline;
+  margin-left: 3%;
+}
+
+#CVButton:hover {
+  color: white;
+  background-color: $buttonColor;
+}
+//end
