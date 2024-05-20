@@ -10,6 +10,8 @@ $nameColor: #ccd3f9;
 
 $aboutColor: #8892b0;
 
+$cardColor: #3a4658;
+
 $fontWeight: bold;
 
 $fontSize: 15sp;
@@ -26,6 +28,72 @@ $fontSize: 15sp;
     opacity: 0;
     transition: all 0.2s;
     pointer-events: none;
+  }
+}
+@mixin sections {
+  margin: auto;
+
+  width: 90%;
+
+  aspect-ratio: 17/6;
+  border: $buttonColor 2px solid;
+}
+
+@mixin TechCardsDesign {
+  .container {
+    &:hover {
+      .Tech-Projects-Link {
+        transform: translateY(0);
+      }
+      .Tech-Image-Container {
+        .Tech-Image {
+          transform: scale(1.2);
+        }
+      }
+    }
+    position: relative;
+    padding-top: 3%;
+    .Tech-Image-Container {
+      z-index: 3;
+      position: relative;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+      background-color: $cardColor;
+      .Tech-Image {
+        transform: scale(1);
+        transition: 0.5s transform;
+      }
+    }
+  }
+}
+
+@mixin LinksDesign {
+  .container {
+    .Tech-Projects-Link {
+      z-index: 2;
+      transform: translateY(-100%);
+      transition: 0.5s transform;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $cardColor;
+      height: 10vh;
+      border: 1px solid black;
+      .Projects-Link {
+        font-size: 1vw;
+        color: $sectionsColor;
+        opacity: 0.5;
+        font-weight: $fontWeight;
+        transition: 1s all;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 //gerneral
@@ -170,10 +238,7 @@ html {
 #About-Me {
   margin-bottom: 30vh;
   #About-Me-Information {
-    border: $buttonColor 2px solid;
-    width: 90%;
-    margin: auto;
-    aspect-ratio: 16/6;
+    @include sections;
 
     #About-Me-SectionTitle {
       display: inline-block;
@@ -219,15 +284,9 @@ html {
 }
 
 #Education {
-  margin-bottom: 100px;
+  margin-bottom: 30vh;
   #Education-Information {
-    margin: auto;
-
-    width: 90%;
-    transform: skew(0);
-    transition: 1s transform;
-    aspect-ratio: 17/6;
-    border: $buttonColor 2px solid;
+    @include sections;
     #Section-Title {
       position: relative;
       color: #a9aad1;
@@ -262,7 +321,6 @@ html {
       padding-left: 9%;
     }
     &:hover {
-      transform: skew(10deg);
       #Section-Title {
         &::after {
           width: 15% !important;
@@ -285,8 +343,38 @@ html {
   }
 }
 
+#Technologies {
+  margin-bottom: 30vh;
+  #Tech-Section-Information {
+    @include sections;
+    #Tech-SectionTitle {
+      position: relative;
+      display: inline-block;
+      font-size: 2.5vw;
+      left: 5%;
+      padding-top: 3%;
+      color: $sectionsColor;
+      @include underline;
+    }
+    #Flutter-Firebase-Java {
+      @include TechCardsDesign;
+      @include LinksDesign;
+    }
+    #Html-Css-JavaScript {
+      @include LinksDesign;
+      @include TechCardsDesign;
+    }
+  }
+  &:hover {
+    #Tech-SectionTitle::after {
+      width: 100% !important;
+      opacity: 1 !important;
+    }
+  }
+}
+
 @media (max-width: 1100px) {
-  #Personal-Image{
+  #Personal-Image {
     display: none !important;
   }
   *::after {

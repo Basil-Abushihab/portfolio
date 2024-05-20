@@ -144,10 +144,10 @@ html {
   margin-bottom: 30vh;
 }
 #About-Me #About-Me-Information {
-  border: #00caad 2px solid;
-  width: 90%;
   margin: auto;
-  aspect-ratio: 16/6;
+  width: 90%;
+  aspect-ratio: 17/6;
+  border: #00caad 2px solid;
 }
 #About-Me #About-Me-Information #About-Me-SectionTitle {
   display: inline-block;
@@ -196,13 +196,11 @@ html {
 }
 
 #Education {
-  margin-bottom: 100px;
+  margin-bottom: 30vh;
 }
 #Education #Education-Information {
   margin: auto;
   width: 90%;
-  transform: skew(0);
-  transition: 1s transform;
   aspect-ratio: 17/6;
   border: #00caad 2px solid;
 }
@@ -271,9 +269,6 @@ html {
   font-size: 1vw;
   padding-left: 9%;
 }
-#Education #Education-Information:hover {
-  transform: skew(10deg);
-}
 #Education #Education-Information:hover #Section-Title::after {
   width: 15% !important;
   opacity: 1 !important;
@@ -284,6 +279,130 @@ html {
 }
 #Education #Education-Information:hover #University-Major::after {
   width: 15% !important;
+  opacity: 1 !important;
+}
+
+#Technologies {
+  margin-bottom: 30vh;
+}
+#Technologies #Tech-Section-Information {
+  margin: auto;
+  width: 90%;
+  aspect-ratio: 17/6;
+  border: #00caad 2px solid;
+}
+#Technologies #Tech-Section-Information #Tech-SectionTitle {
+  position: relative;
+  display: inline-block;
+  font-size: 2.5vw;
+  left: 5%;
+  padding-top: 3%;
+  color: #a9aad1;
+}
+#Technologies #Tech-Section-Information #Tech-SectionTitle::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #00caad;
+  left: 1.5px;
+  bottom: -5px;
+  opacity: 0;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+#Technologies #Tech-Section-Information #Flutter-Firebase-Java .container {
+  position: relative;
+  padding-top: 3%;
+}
+#Technologies #Tech-Section-Information #Flutter-Firebase-Java .container:hover .Tech-Projects-Link {
+  transform: translateY(0);
+}
+#Technologies #Tech-Section-Information #Flutter-Firebase-Java .container:hover .Tech-Image-Container .Tech-Image {
+  transform: scale(1.2);
+}
+#Technologies #Tech-Section-Information #Flutter-Firebase-Java .container .Tech-Image-Container {
+  z-index: 3;
+  position: relative;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: #3a4658;
+}
+#Technologies #Tech-Section-Information #Flutter-Firebase-Java .container .Tech-Image-Container .Tech-Image {
+  transform: scale(1);
+  transition: 0.5s transform;
+}
+#Technologies #Tech-Section-Information #Flutter-Firebase-Java .container .Tech-Projects-Link {
+  z-index: 2;
+  transform: translateY(-100%);
+  transition: 0.5s transform;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a4658;
+  height: 10vh;
+  border: 1px solid black;
+}
+#Technologies #Tech-Section-Information #Flutter-Firebase-Java .container .Tech-Projects-Link .Projects-Link {
+  font-size: 1vw;
+  color: #a9aad1;
+  opacity: 0.5;
+  font-weight: bold;
+  transition: 1s all;
+}
+#Technologies #Tech-Section-Information #Flutter-Firebase-Java .container .Tech-Projects-Link .Projects-Link:hover {
+  opacity: 1;
+}
+#Technologies #Tech-Section-Information #Html-Css-JavaScript .container .Tech-Projects-Link {
+  z-index: 2;
+  transform: translateY(-100%);
+  transition: 0.5s transform;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3a4658;
+  height: 10vh;
+  border: 1px solid black;
+}
+#Technologies #Tech-Section-Information #Html-Css-JavaScript .container .Tech-Projects-Link .Projects-Link {
+  font-size: 1vw;
+  color: #a9aad1;
+  opacity: 0.5;
+  font-weight: bold;
+  transition: 1s all;
+}
+#Technologies #Tech-Section-Information #Html-Css-JavaScript .container .Tech-Projects-Link .Projects-Link:hover {
+  opacity: 1;
+}
+#Technologies #Tech-Section-Information #Html-Css-JavaScript .container {
+  position: relative;
+  padding-top: 3%;
+}
+#Technologies #Tech-Section-Information #Html-Css-JavaScript .container:hover .Tech-Projects-Link {
+  transform: translateY(0);
+}
+#Technologies #Tech-Section-Information #Html-Css-JavaScript .container:hover .Tech-Image-Container .Tech-Image {
+  transform: scale(1.2);
+}
+#Technologies #Tech-Section-Information #Html-Css-JavaScript .container .Tech-Image-Container {
+  z-index: 3;
+  position: relative;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: #3a4658;
+}
+#Technologies #Tech-Section-Information #Html-Css-JavaScript .container .Tech-Image-Container .Tech-Image {
+  transform: scale(1);
+  transition: 0.5s transform;
+}
+#Technologies:hover #Tech-SectionTitle::after {
+  width: 100% !important;
   opacity: 1 !important;
 }
 
