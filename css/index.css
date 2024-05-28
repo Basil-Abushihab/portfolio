@@ -29,7 +29,7 @@ html {
   align-content: center;
 }
 #nav-bar #sectionContainer .sections {
-  font-size: larger;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #a9aad1;
   display: inline-block;
@@ -57,23 +57,13 @@ html {
 #nav-bar #sectionContainer .sections:hover {
   opacity: 1;
 }
-#nav-bar #CVButton {
-  color: #a9aad1;
-  border-color: #00caad;
-  display: inline;
-  margin-left: 3%;
-}
-#nav-bar #CVButton:hover {
-  color: white;
-  background-color: #00caad;
-}
 
 #hamburger {
   position: relative;
   display: none;
   cursor: pointer;
   left: 40%;
-  padding-top: 50px;
+  bottom: 100px;
 }
 #hamburger .bar {
   display: block;
@@ -112,6 +102,11 @@ html {
   overflow: hidden;
   animation: typingSmall 1.5s steps(18) forwards, cursor 0.4s step-end infinite alternate;
 }
+@media (max-width: 1000px) {
+  #About-Me-Herosection #About-Me-title .smallText {
+    font-size: 3vw;
+  }
+}
 #About-Me-Herosection #About-Me-title .bigText {
   display: block;
   overflow: hidden;
@@ -122,8 +117,18 @@ html {
   color: #ccd3f9;
   animation: typing 2s steps(22) 1.5s forwards, cursor 0.4s step-end infinite alternate;
 }
+@media (max-width: 1000px) {
+  #About-Me-Herosection #About-Me-title .bigText {
+    font-size: 5vw;
+  }
+}
 #About-Me-Herosection #About-Me-title #About-Me-TitleText {
   font-size: 4vw;
+}
+@media (max-width: 1000px) {
+  #About-Me-Herosection #About-Me-title #About-Me-TitleText {
+    font-size: 5vw;
+  }
 }
 #About-Me-Herosection #About-Me-title .About-Me-Text {
   opacity: 0;
@@ -139,23 +144,29 @@ html {
   display: inline;
   width: 30px !important;
 }
+@media (max-width: 1000px) {
+  #About-Me-Herosection #About-Me-title .description {
+    font-size: 3vw;
+  }
+}
 
 #About-Me {
   margin-bottom: 30vh;
 }
 #About-Me #About-Me-Information {
   margin: auto;
-  width: 90%;
-  aspect-ratio: 17/6;
+  width: 95%;
   border: #00caad 2px solid;
 }
 #About-Me #About-Me-Information #About-Me-SectionTitle {
   display: inline-block;
-  position: relative;
   color: #a9aad1;
+  font-size: 2vw;
+  color: #a9aad1;
+  position: relative;
   font-size: 2.5vw;
-  left: 5%;
   padding-top: 3%;
+  left: 6%;
 }
 #About-Me #About-Me-Information #About-Me-SectionTitle::after {
   content: "";
@@ -169,26 +180,48 @@ html {
   transition: all 0.2s;
   pointer-events: none;
 }
-#About-Me #About-Me-Information #About-Me-Description {
-  display: block;
-  width: 60%;
-  position: relative;
-  font-size: 1vw;
-  left: 5%;
-  top: 7%;
-  color: #8892b0;
+@media (max-width: 1000px) {
+  #About-Me #About-Me-Information #About-Me-SectionTitle {
+    font-size: 4vw !important;
+  }
 }
-#About-Me #About-Me-Information #Personal-Image {
-  display: inline;
-  position: relative;
-  bottom: 40%;
-  left: 74%;
-  height: 40vh;
+@media (max-width: 1000px) {
+  #About-Me #About-Me-Information #About-Me-SectionTitle {
+    font-size: 2.5vw;
+  }
+}
+#About-Me #About-Me-Information #Description-Image {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#About-Me #About-Me-Information #Description-Image #About-Me-Description {
+  display: block;
+  width: 50%;
+  height: fit-content;
+  font-size: 1vw;
+  color: #8892b0;
+  padding-top: 3%;
+}
+@media (max-width: 1000px) {
+  #About-Me #About-Me-Information #Description-Image #About-Me-Description {
+    font-size: 2vw;
+  }
+}
+#About-Me #About-Me-Information #Description-Image #Personal-Image {
+  display: block;
+  width: 17vw;
   opacity: 0;
   transition: 0.4s ease-in opacity;
 }
+@media (max-width: 1000px) {
+  #About-Me #About-Me-Information #Description-Image #Personal-Image {
+    width: 30vw;
+    opacity: 1;
+  }
+}
 #About-Me #About-Me-Information:hover #Personal-Image {
-  opacity: 1;
+  opacity: 1 !important;
 }
 #About-Me #About-Me-Information:hover #About-Me-SectionTitle::after {
   width: 100%;
@@ -200,16 +233,15 @@ html {
 }
 #Education #Education-Information {
   margin: auto;
-  width: 90%;
-  aspect-ratio: 17/6;
+  width: 95%;
   border: #00caad 2px solid;
 }
 #Education #Education-Information #Section-Title {
-  position: relative;
   color: #a9aad1;
+  position: relative;
   font-size: 2.5vw;
-  left: 5%;
   padding-top: 3%;
+  left: 6%;
 }
 #Education #Education-Information #Section-Title::after {
   content: "";
@@ -223,10 +255,16 @@ html {
   transition: all 0.2s;
   pointer-events: none;
 }
+@media (max-width: 1000px) {
+  #Education #Education-Information #Section-Title {
+    font-size: 4vw !important;
+  }
+}
 #Education #Education-Information #University-Name {
-  display: inline-block;
   position: relative;
-  left: 7%;
+  bottom: 1vh;
+  left: 8%;
+  display: inline-block;
   color: #8892b0;
   font-size: 1.5vw;
 }
@@ -242,12 +280,18 @@ html {
   transition: all 0.2s;
   pointer-events: none;
 }
+@media (max-width: 1000px) {
+  #Education #Education-Information #University-Name {
+    font-size: 2.5vw;
+    bottom: 3vh;
+  }
+}
 #Education #Education-Information #University-Major {
   display: block;
   position: relative;
   color: #8892b0;
-  font-size: 1.2vw;
-  left: 9%;
+  font-size: 2vw;
+  left: 12%;
 }
 #Education #Education-Information #University-Major::after {
   content: "";
@@ -261,13 +305,25 @@ html {
   transition: all 0.2s;
   pointer-events: none;
 }
+@media (max-width: 1000px) {
+  #Education #Education-Information #University-Major {
+    font-size: 2.5vw;
+    bottom: 4vh;
+  }
+}
 #Education #Education-Information #University-Description {
   display: inline-block;
   position: relative;
   width: 70%;
   color: #8892b0;
-  font-size: 1vw;
-  padding-left: 9%;
+  font-size: 1.5vw;
+  left: 12%;
+}
+@media (max-width: 1000px) {
+  #Education #Education-Information #University-Description {
+    font-size: 2vw;
+    bottom: 5vh;
+  }
 }
 #Education #Education-Information:hover #Section-Title::after {
   width: 15% !important;
@@ -278,7 +334,7 @@ html {
   opacity: 1 !important;
 }
 #Education #Education-Information:hover #University-Major::after {
-  width: 15% !important;
+  width: 25% !important;
   opacity: 1 !important;
 }
 
@@ -287,17 +343,16 @@ html {
 }
 #Technologies #Tech-Section-Information {
   margin: auto;
-  width: 90%;
-  aspect-ratio: 17/6;
+  width: 95%;
   border: #00caad 2px solid;
 }
 #Technologies #Tech-Section-Information #Tech-SectionTitle {
-  position: relative;
-  display: inline-block;
-  font-size: 2.5vw;
-  left: 5%;
-  padding-top: 3%;
+  display: inline;
   color: #a9aad1;
+  position: relative;
+  font-size: 2.5vw;
+  padding-top: 3%;
+  left: 6%;
 }
 #Technologies #Tech-Section-Information #Tech-SectionTitle::after {
   content: "";
@@ -310,6 +365,11 @@ html {
   opacity: 0;
   transition: all 0.2s;
   pointer-events: none;
+}
+@media (max-width: 1000px) {
+  #Technologies #Tech-Section-Information #Tech-SectionTitle {
+    font-size: 4vw !important;
+  }
 }
 #Technologies #Tech-Section-Information #Flutter-Firebase-Java .container {
   position: relative;
@@ -353,6 +413,11 @@ html {
   font-weight: bold;
   transition: 1s all;
 }
+@media (max-width: 1000px) {
+  #Technologies #Tech-Section-Information #Flutter-Firebase-Java .container .Tech-Projects-Link .Projects-Link {
+    font-size: 2vw;
+  }
+}
 #Technologies #Tech-Section-Information #Flutter-Firebase-Java .container .Tech-Projects-Link .Projects-Link:hover {
   opacity: 1;
 }
@@ -373,6 +438,11 @@ html {
   opacity: 0.5;
   font-weight: bold;
   transition: 1s all;
+}
+@media (max-width: 1000px) {
+  #Technologies #Tech-Section-Information #Html-Css-JavaScript .container .Tech-Projects-Link .Projects-Link {
+    font-size: 2vw;
+  }
 }
 #Technologies #Tech-Section-Information #Html-Css-JavaScript .container .Tech-Projects-Link .Projects-Link:hover {
   opacity: 1;
@@ -411,8 +481,7 @@ html {
 }
 #Projects #Projects-Section-Information {
   margin: auto;
-  width: 90%;
-  aspect-ratio: 17/6;
+  width: 95%;
   border: #00caad 2px solid;
 }
 #Projects #Projects-Section-Information:hover #Projects-SectionTitle::after {
@@ -421,11 +490,11 @@ html {
 }
 #Projects #Projects-Section-Information #Projects-SectionTitle {
   display: inline-block;
-  position: relative;
   color: #a9aad1;
+  position: relative;
   font-size: 2.5vw;
-  left: 5%;
   padding-top: 3%;
+  left: 6%;
 }
 #Projects #Projects-Section-Information #Projects-SectionTitle::after {
   content: "";
@@ -438,6 +507,11 @@ html {
   opacity: 0;
   transition: all 0.2s;
   pointer-events: none;
+}
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Projects-SectionTitle {
+    font-size: 4vw !important;
+  }
 }
 #Projects #Projects-Section-Information .Projects-Type {
   color: #8892b0;
@@ -464,6 +538,11 @@ html {
   transition: 0.5s height;
   height: 0;
 }
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Flutter-Section .Projects-Card .Image-Container {
+    display: none;
+  }
+}
 #Projects #Projects-Section-Information #Flutter-Section .Projects-Card .Image-Container .Project-Image {
   display: inline;
   transform: scale(90%);
@@ -485,13 +564,23 @@ html {
   transition: all 0.2s;
   pointer-events: none;
 }
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Flutter-Section .Projects-Card .Project-Description-Container .Project-Title {
+    font-size: 2.5vw;
+  }
+}
 #Projects #Projects-Section-Information #Flutter-Section .Projects-Card .Project-Description-Container .Project-Description {
-  font-size: 0.8vw;
+  font-size: 1vw;
   color: whitesmoke;
   text-align: center;
 }
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Flutter-Section .Projects-Card .Project-Description-Container .Project-Description {
+    font-size: 1.4vw;
+  }
+}
 #Projects #Projects-Section-Information #Flutter-Section .Projects-Card .Project-Link-Container {
-  height: 12vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -504,8 +593,26 @@ html {
   font-weight: bold;
   transition: 1s all;
 }
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Flutter-Section .Projects-Card .Project-Link-Container .Project-Link {
+    font-size: 2vw;
+  }
+}
 #Projects #Projects-Section-Information #Flutter-Section .Projects-Card .Project-Link-Container .Project-Link:hover {
   opacity: 1;
+}
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Flutter-Section .Projects-Card .Project-Link-Container {
+    height: 5vh;
+  }
+}
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Flutter-Section .Projects-Card:hover {
+    height: 30vh !important;
+  }
+  #Projects #Projects-Section-Information #Flutter-Section .Projects-Card:hover .Image-Container {
+    height: 0vh !important;
+  }
 }
 #Projects #Projects-Section-Information #Flutter-Section .Projects-Card:hover {
   height: 60vh;
@@ -531,6 +638,11 @@ html {
   transition: 0.5s height;
   height: 0;
 }
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Web-Section .Projects-Card .Image-Container {
+    display: none;
+  }
+}
 #Projects #Projects-Section-Information #Web-Section .Projects-Card .Image-Container .Project-Image {
   display: inline;
   transform: scale(90%);
@@ -552,13 +664,23 @@ html {
   transition: all 0.2s;
   pointer-events: none;
 }
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Web-Section .Projects-Card .Project-Description-Container .Project-Title {
+    font-size: 2.5vw;
+  }
+}
 #Projects #Projects-Section-Information #Web-Section .Projects-Card .Project-Description-Container .Project-Description {
-  font-size: 0.8vw;
+  font-size: 1vw;
   color: whitesmoke;
   text-align: center;
 }
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Web-Section .Projects-Card .Project-Description-Container .Project-Description {
+    font-size: 1.4vw;
+  }
+}
 #Projects #Projects-Section-Information #Web-Section .Projects-Card .Project-Link-Container {
-  height: 12vh;
+  height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -571,8 +693,26 @@ html {
   font-weight: bold;
   transition: 1s all;
 }
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Web-Section .Projects-Card .Project-Link-Container .Project-Link {
+    font-size: 2vw;
+  }
+}
 #Projects #Projects-Section-Information #Web-Section .Projects-Card .Project-Link-Container .Project-Link:hover {
   opacity: 1;
+}
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Web-Section .Projects-Card .Project-Link-Container {
+    height: 5vh;
+  }
+}
+@media (max-width: 1000px) {
+  #Projects #Projects-Section-Information #Web-Section .Projects-Card:hover {
+    height: 30vh !important;
+  }
+  #Projects #Projects-Section-Information #Web-Section .Projects-Card:hover .Image-Container {
+    height: 0vh !important;
+  }
 }
 #Projects #Projects-Section-Information #Web-Section .Projects-Card:hover {
   height: 60vh;
@@ -586,37 +726,69 @@ html {
 
 #Contact {
   margin-top: 30%;
+  border: 1px solid #00caad;
+  transition: 0.6s all;
 }
 #Contact #Contact-Information {
-  height: 10vh;
+  height: 30vh;
 }
-#Contact #Contact-Information #Social-Media-Links-List {
+#Contact #Contact-Information #Contact-Section-Title {
+  color: #a9aad1;
+  position: relative;
+  font-size: 2.5vw;
+  padding-top: 3%;
+  left: 6%;
+  font-size: 2vw;
+  padding-top: 1%;
+}
+#Contact #Contact-Information #Contact-Section-Title::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #00caad;
+  left: 1.5px;
+  bottom: -5px;
+  opacity: 0;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+@media (max-width: 1000px) {
+  #Contact #Contact-Information #Contact-Section-Title {
+    font-size: 4vw !important;
+  }
+}
+#Contact #Contact-Information .row {
+  position: relative;
+  top: 30%;
+}
+#Contact #Contact-Information .row #Social-Media-Links-List {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
   list-style: none;
 }
-#Contact #Contact-Information #Social-Media-Links-List .Social-Media-Links {
-  height: 3.5vh;
+#Contact #Contact-Information .row #Social-Media-Links-List .Social-Media-Links {
+  height: 5vh;
   transition: scale(50%);
 }
-#Contact #Contact-Information .Contact-Information-Email-Phone {
+#Contact #Contact-Information .row .Contact-Information-Email-Phone {
   display: flex;
   justify-content: space-around;
 }
-#Contact #Contact-Information .Contact-Information-Email-Phone .Contact-Information {
+#Contact #Contact-Information .row .Contact-Information-Email-Phone .Contact-Information {
   display: inline;
   color: #ccd3f9;
   font-size: 1vw;
 }
 
 @media (max-width: 1100px) {
-  #Personal-Image {
-    display: none !important;
-  }
   *::after {
     display: none !important;
+  }
+  body {
+    font-size: 32px;
   }
   #hamburger {
     display: block;
@@ -643,9 +815,6 @@ html {
     text-align: center;
     transition: transform 0.3s;
   }
-  #About-Me-Herosection {
-    padding-top: 50px;
-  }
   .sections {
     margin: 16px;
   }
@@ -661,7 +830,7 @@ html {
     width: 0;
   }
   to {
-    width: 55%;
+    width: 50%;
   }
 }
 @keyframes typingSmall {
@@ -669,7 +838,7 @@ html {
     width: 0;
   }
   to {
-    width: 25%;
+    width: 22%;
   }
 }
 @keyframes cursor {

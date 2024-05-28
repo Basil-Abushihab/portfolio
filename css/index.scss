@@ -30,12 +30,13 @@ $fontSize: 15sp;
     pointer-events: none;
   }
 }
+@mixin dynamicFontSize() {
+}
 @mixin sections {
   margin: auto;
 
-  width: 90%;
+  width: 95%;
 
-  aspect-ratio: 17/6;
   border: $buttonColor 2px solid;
 }
 
@@ -75,7 +76,9 @@ $fontSize: 15sp;
   opacity: 0.5;
   font-weight: $fontWeight;
   transition: 1s all;
-
+  @media (max-width: 1000px) {
+    font-size: 2vw;
+  }
   &:hover {
     opacity: 1;
   }
@@ -99,12 +102,15 @@ $fontSize: 15sp;
   }
 }
 @mixin SectionHeader {
-  position: relative;
   color: #a9aad1;
+  position: relative;
   font-size: 2.5vw;
-  left: 5%;
   padding-top: 3%;
+  left: 6%;
   @include underline;
+  @media (max-width: 1000px) {
+    font-size: 4vw !important;
+  }
 }
 @mixin ProjectsCardDesign {
   margin-top: 3%;
@@ -122,7 +128,9 @@ $fontSize: 15sp;
       justify-content: center;
       transition: 0.5s height;
       height: 0;
-
+      @media (max-width: 1000px) {
+        display: none;
+      }
       .Project-Image {
         display: inline;
         transform: scale(90%);
@@ -134,21 +142,38 @@ $fontSize: 15sp;
         color: $nameColor;
         text-align: center;
         @include underline;
+        @media (max-width: 1000px) {
+          font-size: 2.5vw;
+        }
       }
       .Project-Description {
-        font-size: 0.8vw;
+        font-size: 1vw;
         color: whitesmoke;
         text-align: center;
+        @media (max-width: 1000px) {
+          font-size: 1.4vw;
+        }
       }
     }
     .Project-Link-Container {
-      height: 12vh;
+      height: 5vh;
       display: flex;
       justify-content: center;
       align-items: center;
       border-top: 1px solid black;
       .Project-Link {
         @include LinkStyle;
+      }
+      @media (max-width: 1000px) {
+        height: 5vh;
+      }
+    }
+    @media (max-width: 1000px) {
+      &:hover {
+        height: 30vh !important;
+        .Image-Container {
+          height: 0vh !important;
+        }
       }
     }
     &:hover {
@@ -191,7 +216,7 @@ html {
     align-content: center;
 
     .sections {
-      font-size: larger;
+      font-size: 1.2rem;
       font-weight: $fontWeight;
       color: $sectionsColor;
       display: inline-block;
@@ -209,17 +234,6 @@ html {
       }
     }
   }
-  #CVButton {
-    color: $sectionsColor;
-    border-color: $buttonColor;
-    display: inline;
-    margin-left: 3%;
-  }
-
-  #CVButton:hover {
-    color: white;
-    background-color: $buttonColor;
-  }
 }
 
 #hamburger {
@@ -227,7 +241,7 @@ html {
   display: none;
   cursor: pointer;
   left: 40%;
-  padding-top: 50px;
+  bottom: 100px;
   .bar {
     display: block;
     width: 25px;
@@ -266,6 +280,9 @@ html {
       overflow: hidden;
       animation: typingSmall 1.5s steps(18) forwards,
         cursor 0.4s step-end infinite alternate;
+      @media (max-width: 1000px) {
+        font-size: 3vw;
+      }
     }
     .bigText {
       display: block;
@@ -277,9 +294,15 @@ html {
       color: $nameColor;
       animation: typing 2s steps(22) 1.5s forwards,
         cursor 0.4s step-end infinite alternate;
+      @media (max-width: 1000px) {
+        font-size: 5vw;
+      }
     }
     #About-Me-TitleText {
       font-size: 4vw;
+      @media (max-width: 1000px) {
+        font-size: 5vw;
+      }
     }
     .About-Me-Text {
       opacity: 0;
@@ -294,6 +317,9 @@ html {
         display: inline;
         width: 30px !important;
       }
+      @media (max-width: 1000px) {
+        font-size: 3vw;
+      }
     }
   }
 }
@@ -305,36 +331,45 @@ html {
 
     #About-Me-SectionTitle {
       display: inline-block;
-      position: relative;
       color: $sectionsColor;
-      font-size: 2.5vw;
-      left: 5%;
-      padding-top: 3%;
-      @include underline;
+      font-size: 2vw;
+      @include SectionHeader;
+      @media (max-width: 1000px) {
+        font-size: 2.5vw;
+      }
     }
-
-    #About-Me-Description {
-      display: block;
-      width: 60%;
-      position: relative;
-      font-size: 1vw;
-      left: 5%;
-      top: 7%;
-      color: $aboutColor;
-    }
-    #Personal-Image {
-      display: inline;
-      position: relative;
-      bottom: 40%;
-      left: 74%;
-      height: 40vh;
-      opacity: 0;
-      transition: 0.4s ease-in opacity;
+    #Description-Image {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      #About-Me-Description {
+        display: block;
+        width: 50%;
+        height: fit-content;
+        font-size: 1vw;
+        color: $aboutColor;
+        padding-top: 3%;
+        @media (max-width: 1000px) {
+          font-size: 2vw;
+        }
+      }
+      #Personal-Image {
+        display: block;
+        width: 17vw;
+        opacity: 0;
+        transition: 0.4s ease-in opacity;
+        @media (max-width: 1000px) {
+          & {
+            width: 30vw;
+            opacity: 1;
+          }
+        }
+      }
     }
 
     &:hover {
       #Personal-Image {
-        opacity: 1;
+        opacity: 1 !important;
       }
       #About-Me-SectionTitle {
         &::after {
@@ -354,29 +389,41 @@ html {
       @include SectionHeader;
     }
     #University-Name {
-      display: inline-block;
       position: relative;
-
-      left: 7%;
+      bottom: 1vh;
+      left: 8%;
+      display: inline-block;
       color: #8892b0;
       font-size: 1.5vw;
       @include underline;
+      @media (max-width: 1000px) {
+        font-size: 2.5vw;
+        bottom: 3vh;
+      }
     }
     #University-Major {
       display: block;
       position: relative;
       color: #8892b0;
-      font-size: 1.2vw;
-      left: 9%;
+      font-size: 2vw;
+      left: 12%;
       @include underline;
+      @media (max-width: 1000px) {
+        font-size: 2.5vw;
+        bottom: 4vh;
+      }
     }
     #University-Description {
       display: inline-block;
       position: relative;
       width: 70%;
       color: #8892b0;
-      font-size: 1vw;
-      padding-left: 9%;
+      font-size: 1.5vw;
+      left: 12%;
+      @media (max-width: 1000px) {
+        font-size: 2vw;
+        bottom: 5vh;
+      }
     }
     &:hover {
       #Section-Title {
@@ -393,7 +440,7 @@ html {
       }
       #University-Major {
         &::after {
-          width: 15% !important;
+          width: 25% !important;
           opacity: 1 !important;
         }
       }
@@ -406,13 +453,8 @@ html {
   #Tech-Section-Information {
     @include sections;
     #Tech-SectionTitle {
-      position: relative;
-      display: inline-block;
-      font-size: 2.5vw;
-      left: 5%;
-      padding-top: 3%;
-      color: $sectionsColor;
-      @include underline;
+      display: inline;
+      @include SectionHeader;
     }
     #Flutter-Firebase-Java {
       @include TechCardsDesign;
@@ -466,38 +508,50 @@ html {
 }
 #Contact {
   margin-top: 30%;
-  #Contact-Information {
-    height: 10vh;
-    #Social-Media-Links-List {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-      align-items: center;
-      list-style: none;
-      .Social-Media-Links {
-        height: 3.5vh;
-        transition: scale(50%);
-      }
-    }
-    .Contact-Information-Email-Phone {
-      display: flex;
-      justify-content: space-around;
-      .Contact-Information {
-        display: inline;
-        color: $nameColor;
 
-        font-size: 1vw;
+  border: 1px solid #00caad;
+  transition: 0.6s all;
+  #Contact-Information {
+    height: 30vh;
+    #Contact-Section-Title {
+      @include SectionHeader;
+      font-size: 2vw;
+      padding-top: 1%;
+    }
+    .row {
+      position: relative;
+      top: 30%;
+      #Social-Media-Links-List {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        .Social-Media-Links {
+          height: 5vh;
+          transition: scale(50%);
+        }
+      }
+      .Contact-Information-Email-Phone {
+        display: flex;
+        justify-content: space-around;
+        .Contact-Information {
+          display: inline;
+          color: $nameColor;
+
+          font-size: 1vw;
+        }
       }
     }
   }
 }
 
 @media (max-width: 1100px) {
-  #Personal-Image {
-    display: none !important;
-  }
   *::after {
     display: none !important;
+  }
+  body {
+    font-size: 32px;
   }
   #hamburger {
     display: block;
@@ -528,9 +582,6 @@ html {
     text-align: center;
     transition: transform 0.3s;
   }
-  #About-Me-Herosection {
-    padding-top: 50px;
-  }
 
   .sections {
     margin: 16px;
@@ -550,7 +601,7 @@ html {
     width: 0;
   }
   to {
-    width: 55%;
+    width: 50%;
   }
 }
 
@@ -559,7 +610,7 @@ html {
     width: 0;
   }
   to {
-    width: 25%;
+    width: 22%;
   }
 }
 @keyframes cursor {
